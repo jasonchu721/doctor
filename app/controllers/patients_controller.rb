@@ -1,11 +1,14 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:show, :destroy]
+  before_action :set_patient, only: [:show, :edit, :destroy]
 
   def index
     @patients = Patient.all
   end
 
   def show
+  end
+
+  def edit
   end
 
   def new

@@ -2,34 +2,33 @@
 <%= link_to 'Add Appointment', new_physician_appointment_path(@physician) %>
 <hr />
 
-<h2>Surgeon</h2>
+<h2>Xray</h2>
 <ul>
-  <% @surgeons.each do |surgeon| %>
+  <% @xrays.each do |xray| %>
     <li>
-      <%= surgeon.physican.full_name %>
-      <%= physician.type%>
+      <%= xray.patient.full_name %>
       <br />
-      <%= link_to 'Remove', physician_appointment_path(@physician, surgeon), method: :delete %>
+      <%= link_to 'Remove', physician_appointment_path(@physician, xray), method: :delete %>
     </li>
   <% end %>
 </ul>
-<h2>Oncologist</h2>
+<h2>Physical</h2>
 <ul>
-  <% @oncologists.each do |oncologist| %>
+  <% @physicals.each do |physical| %>
     <li>
-      <%= oncologist.physician.full_name %>
+      <%= physical.patient.full_name %>
       <br />
-      <%= link_to 'Remove', physician_appointment_path(@physician, oncologist), method: :delete %>
+      <%= link_to 'Remove', physician_appointment_path(@physician, physical), method: :delete %>
     </li>
  <% end %>
 </ul>
-<h2>Allergist</h2>
+<h2>Routine</h2>
 <ul>
-  <% @allergists.each do |allergist| %>
+  <% @routines.each do |routine| %>
     <li>
-      <%= allergist.physician.full_name %>
+      <%= routine.patient.full_name %>
       <br />
-      <%= link_to 'Remove', physician_appointment_path(@physician, allergist), method: :delete %>
+      <%= link_to 'Remove', physician_appointment_path(@physician, routine), method: :delete %>
    </li>
  <% end %>
 </ul>

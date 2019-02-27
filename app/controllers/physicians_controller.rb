@@ -8,6 +8,9 @@ class PhysiciansController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def new
     @physician = Physician.new
   end

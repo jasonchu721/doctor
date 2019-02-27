@@ -2,9 +2,9 @@ class AppointmentsController < ApplicationController
   before_action :set_physician
 
   def index
-    @surgeons = @physician.appointments.where(type: 'surgeon')
-    @oncologists = @physician.appointments.where(type: 'oncologist')
-    @allergists = @physician.appointments.where(type: 'allergist')
+    @xrays = @physician.appointments.where(role: 'xray')
+    @physicals = @physician.appointments.where(role: 'physicals')
+    @routines = @physician.appointments.where(role: 'routines')
   end
 
   def new
@@ -25,7 +25,7 @@ class AppointmentsController < ApplicationController
   def destroy
     @apointment = @physician.appointments.find(params[:id])
     @appointment.destroy
-    redirect_to physician_appointments_path(@doctor)
+    redirect_to physician_appointments_path(@physician)
   end
 
  private
@@ -34,6 +34,6 @@ class AppointmentsController < ApplicationController
    end
 
    def appointment_params
-     params.require(:appointment).permit(:type, :patient_id)
+     params.require(:appointment).permit(:role, :patient_id)
    end
 end

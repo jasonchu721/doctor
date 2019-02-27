@@ -2,5 +2,5 @@
 <hr />
 <br />
 <%= link_to 'Appointments', physician_appointments_path(@physician), class: "ui primary button inverted" %>
-<br />
+<%= link_to 'Edit Physician', edit_physician_path(@physician), class: "ui green button inverted" %>
 <%= link_to "Delete Physician", @physician, method: :delete, class: "ui red button inverted" %>

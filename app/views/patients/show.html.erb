@@ -9,6 +9,5 @@
   <% end %>
 </ul>
 <br />
-<br />
-<br />
 <%= link_to 'Delete Patient', @patient, method: :delete, class: "ui red button inverted" %>
+<%= link_to 'Edit Patient', edit_patient_path([@physician, @patient]), class: "ui green button inverted" %>
