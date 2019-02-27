@@ -1,0 +1,9 @@
+<h1>Create New Appointment</h1>
+<%= form_with(model: [@physician, @appointment], local: true, class: "ui form" ) do |f| %>
+  <%= f.select :patient_id, @patients.collect { |u| [u.full_name, u.id] } %>
+  <br />
+  <%= f.label :type %>
+  <%= f.select :type, ['Surgeon', 'Oncologist', 'Allergist'] %>
+  <br />
+  <%= f.submit nil, class: "ui blue button inverted" %>
+<% end %>
