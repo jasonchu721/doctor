@@ -7,6 +7,9 @@ class AppointmentsController < ApplicationController
     @routines = @physician.appointments.where(role: 'routines')
   end
 
+  def show
+  end
+
   def new
     @patients = Patient.all - @physician.patients
     @appointment = @physician.appointments.new

@@ -1,6 +1,6 @@
-<h1>Patients</h1>
+<h1><%= @patient.full_name %></h1>
 <hr />
-<h2><%= @patient.full_name %></h2>
+<h2> Physicians <h2>
 <ul>
   <% @patient.physicians.each do |patient| %>
     <li>
